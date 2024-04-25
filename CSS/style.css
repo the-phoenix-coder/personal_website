@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Montag?u+Slab:opsz,wght@16..144,100..700&family=Montserrat&display=swap");
+/* Start Root Values */
+:root {
+    --header-height: 3.5rem;
+    /* Colors */
+    --first-clr: hsl(230, 62%, 56%);
+    --title-clr: hsl(230, 70%, 16%);
+    --txt-clr: hsl(230, 16%, 45%);
+    --border-clr: hsl(230, 50%, 90%);
+    --white-clr: hsl(0, 0%, 100%);
+    --body-color: hsl(230, 100%, 96%);
+    --container-clr: hsl(230, 100%, 97%);
+    /* Fonts */
+    --body-font: "Montserrat", sans-serif;
+    --second-font: "Montagu Slab", serif;
+    --big-font: 2rem;
+    --h1-font: 1.5rem;
+    --h2-font: 1.25rem;
+    --h3-font: 1rem;
+    --normal-font: 0.938rem;
+    --small-font: 0.813rem;
+    --smaller-font: 0.75rem;
+    /* Font Weight */
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-bold: 600;
+    /* Z Index */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+/* Responsive Typography */
+@media screen and (min-width: 1150px) {
+    :root {
+        --big-font: 3.5rem;
+        --h1-font: 2.25rem;
+        --h2-font: 1.5rem;
+        --h3-font: 1.25rem;
+        --normal-font: 1rem;
+        --small-font: 0.875rem;
+        --smaller-font: 0.813rem;
+    }
+}
+/* Normalize */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body,
+input,
+button {
+    font-family: var(--body-font);
+    font-size: var(--normal-font);
+}
+body {
+    background-color: var(--body-color);
+    color: var(--txt-clr);
+    transition: background-color 0.4s;
+    -webkit-transition: background-color 0.4s;
+    -moz-transition: background-color 0.4s;
+    -ms-transition: background-color 0.4s;
+    -o-transition: background-color 0.4s;
+}
+input,
+button {
+    border: none;
+    outline: none;
+}
+h1,
+h2,
+h3,
+h4 {
+    color: var(--title-clr);
+    font-family: var(--second-font);
+    font-weight: var(--font-medium);
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+/*=============== THEME ===============*/
+/*========== Variables Dark theme ==========*/
+body.darkTheme {
+    --title-clr: hsl(230, 48%, 85%);
+    --txt-clr: hsl(230, 16%, 70%);
+    --border-clr: hsl(230, 12%, 18%);
+    --white-clr: hsl(0, 0%, 100%);
+    --body-color: #333;
+    --container-clr: hsl(230, 12%, 12%);
+}
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+    max-width: 1220px;
+    margin-inline: 1.5rem;
+}
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+.section {
+    padding-block: 5rem 1rem;
+}
+.section_title {
+    text-align: center;
+    font-size: var(--h1-font);
+    font-family: var(--second-font);
+    margin-bottom: 2rem;
+}
+/* ======================== HEADER ======================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--body-color);
+    z-index: var(--z-fixed);
+    box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.1);
+    transition: box-shadow .4s, background-color .4s;
+    -webkit-transition: box-shadow .4s, background-color .4s;
+    -moz-transition: box-shadow .4s, background-color .4s;
+    -ms-transition: box-shadow .4s, background-color .4s;
+    -o-transition: box-shadow .4s, background-color .4s;
+}
+.nav_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+}
+.nav_list .logo {
+    color: var(--first-clr);
+    font-weight: var(--font-medium);
+    font-size: 1.25rem;
+}
+.nav_list ul {
+    display: flex;
+    gap: 2rem;
+}
+.nav_link i {
+    display: none;
+    font-size: 1.25rem;
+}
+.nav_link:hover {
+    cursor: pointer;
+}
+.nav_link:hover,
+.active_link {
+    color: var(--first-clr);
+}
+@media (max-width: 50em) {
+    .nav_list .logo {
+        margin: auto;
+    }
+    .nav_list ul {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: var(--z-fixed);
+        justify-content: space-between;
+        padding-inline: 1.5rem;
+        height: var(--header-height);
+        align-items: center;
+        box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.1);
+    }
+    .nav_link i {
+        display: block;
+    }
+    .nav_link span {
+        display: none;
+    }
+}
