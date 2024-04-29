@@ -63,6 +63,7 @@ body {
     -moz-transition: background-color 0.4s;
     -ms-transition: background-color 0.4s;
     -o-transition: background-color 0.4s;
+    height: 10000px;
 }
 input,
 button {
@@ -98,11 +99,83 @@ body.darkTheme {
     --body-color: #333;
     --container-clr: hsl(230, 12%, 12%);
 }
-/*=============== REUSABLE CSS CLASSES ===============*/
-.container {
-    max-width: 1220px;
-    margin-inline: 1.5rem;
+/*========== Dark & Day Theme ==========*/
+.darkTheme header {
+    box-shadow: 0, 2px 16px hsla(0, 0%, 0%, .4);
 }
+
+@media(max-width: 50em) {
+    .darkTheme .nav_list {
+        box-shadow: 0 -8px 32px hsla(0, 0%, 0%, .4);
+    }
+}
+
+.darkTheme .scrollup {
+    box-shadow: 0 2px 8px hsla(0, 0%, 0%, .4);
+}
+
+.darkTheme::-webkit-scrollbar {
+    background-color: hsl(0, 0%, 25%);
+}
+.darkTheme::-webkit-scrollbar-thumb {
+    background-color: hsl(0, 0%, 35%);
+}
+.darkTheme::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(0, 0%, 40%);
+}
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+    width: .6rem;
+    background-color: hsl(230, 16%, 85%);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+}
+::-webkit-scrollbar-thumb {
+    background-color: hsl(230, 16%, 65%);
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(230, 16%, 55%);
+}
+/*=============== SCROLL UP ===============*/
+.scrollup {
+    position: fixed;
+    right: 1rem;
+    bottom: -50%;
+    background-color: var(--container-clr);
+    box-shadow: 0 2px 8px hsla(0, 0%, 0%, .1);
+    display: inline-flex;
+    padding: 6px;
+    font-size: 1.25rem;
+    color: var(--title-clr);
+    z-index: var(--z-tooltip);
+    transition: bottom .4s, tranform .4s, background-color .4s;
+    -webkit-transition: bottom .4s, tranform .4s, background-color .4s;
+    -moz-transition: bottom .4s, tranform .4s, background-color .4s;
+    -ms-transition: bottom .4s, tranform .4s, background-color .4s;
+    -o-transition: bottom .4s, tranform .4s, background-color .4s;
+}
+.scrollup:hover {
+    transform: translateY(-.2rem);
+    -webkit-transform: translateY(-.2rem);
+    -moz-transform: translateY(-.2rem);
+    -ms-transform: translateY(-.2rem);
+    -o-transform: translateY(-.2rem);
+    cursor: pointer;
+}
+
+/* Show Scroll Up */
+.show-scroll {
+    bottom: 6rem;
+}
+/*=============== REUSABLE CSS CLASSES ===============*/
 .grid {
     display: grid;
     gap: 1.5rem;
@@ -119,36 +192,34 @@ body.darkTheme {
 /* ======================== HEADER ======================== */
 header {
     position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
-    width: 100%;
-    background-color: var(--body-color);
-    z-index: var(--z-fixed);
-    box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.1);
-    transition: box-shadow .4s, background-color .4s;
-    -webkit-transition: box-shadow .4s, background-color .4s;
-    -moz-transition: box-shadow .4s, background-color .4s;
-    -ms-transition: box-shadow .4s, background-color .4s;
-    -o-transition: box-shadow .4s, background-color .4s;
-}
-.nav_list {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: var(--header-height);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.1);
 }
-.nav_list .logo {
+header .logo {
     color: var(--first-clr);
+    font-size: var(--h2-font);
     font-weight: var(--font-medium);
-    font-size: 1.25rem;
+}
+.nav_list {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.1);
 }
 .nav_list ul {
     display: flex;
-    gap: 2rem;
+    justify-content: space-around;
 }
-.nav_link i {
-    display: none;
-    font-size: 1.25rem;
+.nav_link {
+    color: var(--txt-clr);
 }
 .nav_link:hover {
     cursor: pointer;
@@ -157,26 +228,33 @@ header {
 .active_link {
     color: var(--first-clr);
 }
-@media (max-width: 50em) {
-    .nav_list .logo {
-        margin: auto;
+.nav_list span {
+    display: none;
+}
+.nav_list i {
+    font-size: 1.2rem;
+}
+.theme_icon {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+@media (min-width: 800px) {
+    header {
+        justify-content: space-between;
+    }
+    .nav_list {
+        box-shadow: 0 0;
+        position: sticky;
+        width: fit-content;
     }
     .nav_list ul {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        z-index: var(--z-fixed);
-        justify-content: space-between;
-        padding-inline: 1.5rem;
-        height: var(--header-height);
-        align-items: center;
-        box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.1);
-    }
-    .nav_link i {
-        display: block;
+        gap: 3rem;
+        justify-content: center;
     }
     .nav_link span {
+        display: block;
+    }
+    .nav_link i {
         display: none;
     }
 }
