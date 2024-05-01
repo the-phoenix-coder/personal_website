@@ -58,10 +58,15 @@ button {
 button {
     background-color: var(--first-clr);
     color: var(--white-clr);
-    padding: .5rem .8rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
 }
 i {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 i:not(button > i):hover {
     color: var(--first-clr);
@@ -282,7 +287,7 @@ main {
     gap: 2rem;
 }
 main .main-content h1 {
-    line-height: 2rem;
+    line-height: 4rem;
     margin-bottom: 2rem;
     font-size: var(--big-font);
     font-weight: var(--font-bold);
@@ -312,4 +317,21 @@ main .main-content .social_icons {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
+}
+main .main-image {
+    max-width: 500px;
+}
+@media(min-width: 50em) {
+    main {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: start;
+    }
+    main .main-content .hire_btns {
+        flex-direction: row;
+    }
+    main .main-content .social_icons {
+        justify-content: start;
+    }
 }
