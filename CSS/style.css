@@ -386,3 +386,29 @@ main .main-image {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+/* ======================== About ======================== */
+.swiper {
+    width: 80%;
+    height: 500px;
+}
+.swiper-slide,
+.swiper-slide img {
+    border-radius: .7rem;
+    -webkit-border-radius: .7rem;
+    -moz-border-radius: .7rem;
+    -ms-border-radius: .7rem;
+    -o-border-radius: .7rem;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    color: var(--first-clr);
+    background-color: var(--container-clr);
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: .7rem;
+    -webkit-border-radius: .7rem;
+    -moz-border-radius: .7rem;
+    -ms-border-radius: .7rem;
+    -o-border-radius: .7rem;
+    padding: 1rem;
+}

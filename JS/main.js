@@ -42,3 +42,20 @@ scrollUpBtn.addEventListener('click', () =>
     document.documentElement.scrollTop = 0; // For modern browsers
     document.body.scrollTop = 0; // For older browsers
 })
+
+const swiper = new Swiper('.swiper', {
+    loop: true,
+    spaceBetween: 40,
+    slidesPerView: 'auto',
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    breakpoints: {
+        1150: {
+            slidesPerView: 2,
+        }
+    }
+});
