@@ -387,7 +387,63 @@ main .main-image {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-/* ======================== About ======================== */
+/* ======================== Experiences ======================== */
+@media(min-width: 50em) {
+  #experiences .container {
+    padding-inline: 15rem
+  }
+}
+#experiences .job {
+  position: relative;
+}
+#experiences .job::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -20px;
+  background-color: var(--txt-clr);
+  width: 3px;
+  height: 100%;
+}
+:where(#experiences .job) h2, h3 {
+  margin-block: 1rem;
+}
+#experiences .job h2 {
+  position: relative;
+}
+#experiences .job h2::before,
+#experiences .job h2::after {
+  position: absolute;
+  top: 0;
+}
+#experiences .job h2::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: var(--first-clr);
+  border-radius:50%;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  -ms-border-radius:50%;
+  -o-border-radius:50%;
+  left: -29px;
+  z-index: var(--z-fixed);
+}
+#experiences .job h2::after {
+  font-size: .7rem;
+  left: -12%;
+  background-color: var(--border-clr);
+  padding: .2rem;
+  width: 70px;
+}
+#experiences .job:first-child h2::after {
+  content: '2021, persent';
+}
+#experiences .job:last-child h2::after {
+  content: '2019, 2021';
+}
+
+/* ======================== Projects ======================== */
 .swiper {
     width: 80%;
     height: 500px;
