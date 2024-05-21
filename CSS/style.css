@@ -197,7 +197,7 @@ body.darkTheme {
   gap: 1.5rem;
 }
 .section {
-  padding-inline: 5rem;
+  padding-inline: 2rem;
 }
 .container {
   padding-block: 3rem;
@@ -388,6 +388,11 @@ main .main-image {
   }
 }
 /* ======================== Experiences ======================== */
+#experiences .container {
+  display: grid;
+  place-content: center;
+  padding-inline: 2rem;
+}
 @media(min-width: 50em) {
   #experiences .container {
     padding-inline: 15rem
@@ -395,12 +400,14 @@ main .main-image {
 }
 #experiences .job {
   position: relative;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 #experiences .job::after {
   content: '';
   position: absolute;
   top: 0;
-  left: -20px;
+  left: -1rem;
   background-color: var(--txt-clr);
   width: 3px;
   height: 100%;
@@ -408,31 +415,12 @@ main .main-image {
 :where(#experiences .job) h2, h3 {
   margin-block: 1rem;
 }
-#experiences .job h2 {
-  position: relative;
-}
-#experiences .job h2::before,
 #experiences .job h2::after {
-  position: absolute;
-  top: 0;
-}
-#experiences .job h2::before {
-  content: '';
-  width: 20px;
-  height: 20px;
-  background-color: var(--first-clr);
-  border-radius:50%;
-  -webkit-border-radius:50%;
-  -moz-border-radius:50%;
-  -ms-border-radius:50%;
-  -o-border-radius:50%;
-  left: -29px;
-  z-index: var(--z-fixed);
-}
-#experiences .job h2::after {
+  float: right;
+  text-align: center;
   font-size: .7rem;
-  left: -12%;
-  background-color: var(--border-clr);
+  background-color: var(--txt-clr);
+  color: var(--border-clr);
   padding: .2rem;
   width: 70px;
 }
@@ -441,6 +429,9 @@ main .main-image {
 }
 #experiences .job:last-child h2::after {
   content: '2019, 2021';
+}
+#experiences .container .job p {
+  max-width: 500px;
 }
 
 /* ======================== Projects ======================== */
