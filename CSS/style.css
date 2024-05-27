@@ -435,30 +435,24 @@ main .main-image {
 }
 
 /* ======================== Projects ======================== */
-.swiper {
-    width: 80%;
-    height: 500px;
+.swiper-wrapper {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.swiper-slide,
-.swiper-slide img {
-    border-radius: 0.7rem;
-    -webkit-border-radius: 0.7rem;
-    -moz-border-radius: 0.7rem;
-    -ms-border-radius: 0.7rem;
-    -o-border-radius: 0.7rem;
+.swiper-wrapper > a {
+  max-width: 400px;
+  transition: .3s translate ease-in, .3s border-color ease-in;
+  -webkit-transition: .3s translate ease-in, .3s border-color ease-in;
+  -moz-transition: .3s translate ease-in, .3s border-color ease-in;
+  -ms-transition: .3s translate ease-in, .3s border-color ease-in;
+  -o-transition: .3s translate ease-in, .3s border-color ease-in;
 }
-.swiper-button-prev::after,
-.swiper-button-next::after {
-    color: var(--first-clr);
-    background-color: var(--container-clr);
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 0.7rem;
-    -webkit-border-radius: 0.7rem;
-    -moz-border-radius: 0.7rem;
-    -ms-border-radius: 0.7rem;
-    -o-border-radius: 0.7rem;
-    padding: 1rem;
+.swiper-wrapper > a:hover {
+  translate: 0 -3px;
+  border-bottom: 3px solid var(--first-clr);
+  cursor: pointer;
 }
 /* ======================== Contact ======================== */
 #contact {
