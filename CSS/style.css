@@ -322,6 +322,9 @@ main .main-content .social_icons {
   justify-content: center;
   gap: 1.5rem;
 }
+main .social_icons i {
+  color: var(--first-clr);
+}
 main .main-image {
   max-width: 500px;
 }
@@ -474,7 +477,7 @@ main .main-image {
 #contact .contact_info > div i {
   color: var(--first-clr);
 }
-#contact .contact_info > div a {
+#contact .contact_info > div a{
   color: var(--txt-clr);
 }
 #contact .social_icons {
@@ -483,7 +486,7 @@ main .main-image {
     align-items: center;
     gap: 2rem;
 }
-#contact a i {
+#contact .social_icons i {
   color: var(--first-clr);
 }
 @media(min-width: 50em) {
